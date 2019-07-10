@@ -1,0 +1,44 @@
+.Menu{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px 45px;
+  position: relative;
+  z-index: 10;
+  ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    li{
+      list-style-type: none;
+      a{
+        color: #003763;
+        border: 2px solid transparent;
+        transition: .5s;
+        padding: 5px 25px;
+        display: inline-block;
+        font-size: 24px;
+
+        &:after{
+          content: '';
+          width: 0%;
+          display: block;
+          background-color: #f4841a;
+          height: 2px;
+          transition: 1s;
+        }
+        &:hover{
+          &:after{
+            width: 100%;
+          }
+        }
+        &.active{
+          color: #f4841a;
+          &:after{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.Home{
+  h2{
+    color: #003763;
+    margin-bottom: 5px;
+    font-size: 45px;
+  }
+  span{
+    font-size: 40px;
+    color: #003763;
+    font-weight: bold;
+    &.otherSpan{
+      color: #f4841a;
+    }
+  }
+  p{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 25px;
+  }
+  a{
+    border: 2px solid #f4841a;
+    display: inline-block;
+    margin: 25px 0;
+    padding: 10px 15px;
+    color: #003763;
+    font-weight: bold;
+    transition: 1s;
+    &:hover{
+      background-color: #f4841a;
+      color: white;
+    }
+  }
+}
