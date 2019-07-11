@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Tab.scss";
+import {NavLink} from 'react-router-dom';
 import classes from '../Portfolio.module.scss';
 
 let website = [
@@ -9,38 +10,137 @@ let website = [
         git: "https://github.com/RWC18/BurgerBuilder_WithReact",
     },
     {
-        text: "Burger Builder (react.js, redux, firebase)",
-        link: "https://burger--builder.herokuapp.com/",
-        git: "https://github.com/RWC18/BurgerBuilder_WithReact",
+        text: "Single page card-website  (react.js, node.js)",
+        link: "",
+        git: "https://github.com/RWC18/DM-DreaMi",
     },
     {
-        text: "Burger Builder (react.js, redux, firebase)",
-        link: "https://burger--builder.herokuapp.com/",
-        git: "https://github.com/RWC18/BurgerBuilder_WithReact",
+        text: "Computer service-shop website (HTML5, CSS3, MySQL, PHP)",
+        link: "https://vahe-minasyan.herokuapp.com/",
+        git: "https://github.com/RWC18/ArcCert_webPage_withReact",
     },
     {
-        text: "Burger Builder (react.js, redux, firebase)",
-        link: "https://burger--builder.herokuapp.com/",
-        git: "https://github.com/RWC18/BurgerBuilder_WithReact",
+        text: "Calculator (react.js, redux)",
+        link: "https://calculator-redux.herokuapp.com/",
+        git: "https://github.com/RWC18/calculator_react-redux",
     },
     {
-        text: "Burger Builder (react.js, redux, firebase)",
-        link: "https://burger--builder.herokuapp.com/",
-        git: "https://github.com/RWC18/BurgerBuilder_WithReact",
-    },
-    {
-        text: "Burger Builder (react.js, redux, firebase)",
-        link: "https://burger--builder.herokuapp.com/",
-        git: "https://github.com/RWC18/BurgerBuilder_WithReact",
+        text: "Blog (react.js)",
+        link: "",
+        git: "https://github.com/RWC18/simple_react_app",
     },
 ];
+
+let webdesign = [
+    {
+        text: "Design for card website",
+        link: "../../../OtherFiles/onepage.xd",
+    },
+];
+
+
+let illustration = [
+    {
+        text: "Graffiti letter 'A'",
+        link: "images/illustrations/Graffitii_A",
+    },
+    {
+        text: "Graffiti letter 'M'",
+        link: "images/illustrations/Graffitti_M",
+    },
+    {
+        text: "Graffiti letter 'V'",
+        link: "images/illustrations/Graffitti_V",
+    },
+    {
+        text: "Graffiti letter 'T'",
+        link: "images/illustrations/Graffiti_T",
+    },
+    {
+        text: "Montain",
+        link: "images/illustrations/mountain",
+    },
+    {
+        text: "Forest",
+        link: "images/illustrations/forest",
+    },
+    {
+        text: "Spider-Man | Banner",
+        link: "images/illustrations/spider_man",
+    },
+    {
+        text: "Logo for beauty salon",
+        link: "images/illustrations/LogoForBeautySalon",
+    },
+];
+
 
 
 
 let data = [
     {
         name: 'All',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nihil, nisi, voluptate ad quis ea omnis quidem minima fugit adipisci, porro ut velit officiis natus eligendi autem inventore dolor fuga unde nesciunt expedita, beatae officia nostrum labore. Reiciendis, commodi adipisci eius est recusandae ipsa incidunt repellat explicabo nobis corporis debitis non ullam, eos itaque, quia, iste repudiandae. Iusto numquam consectetur quo, et, quis deleniti ipsam eaque perferendis. Repellat ad, molestiae id deserunt praesentium distinctio similique nesciunt itaque. Repellat error enim blanditiis esse, odio commodi exercitationem nostrum perferendis veniam quod, recusandae provident aspernatur aliquam placeat odit cumque fugit ducimus, voluptatibus ad?'
+            text: <>
+                <h4>Websites</h4>
+                {
+                website.map((item) => {
+                return (
+                    <li>
+                        <div>
+                            {
+                                item.link !== "" ?
+                                    <a href={item.link} target="_blank">
+                                        <i className="fas fa-eye"> </i>
+                                    </a>
+                                    :
+                                    <a style={{cursor: 'not-allowed'}} target="_blank">
+                                        <i className="fas fa-eye-slash"> </i>
+                                    </a>
+                            }
+
+                            <a href={item.git} target="_blank">
+                                <i className="fas fa-code"> </i>
+                                {/*<i className="fab fa-github"> </i>*/}
+                            </a>
+                        </div>
+                        {item.text}
+                    </li>
+                )
+            })
+        }
+
+        <h4>Webpage design</h4>
+                {
+                    webdesign.map((item) => {
+                        return (
+                            <li>
+                                <div>
+                                    <a href={item.link} download className={classes.download}>
+                                        <i className="fas fa-file-download"> </i>
+                                    </a>
+                                </div>
+                                {item.text}
+                            </li>
+                        )
+                    })
+                }
+
+                <h4>Illustrations</h4>
+                {
+                    illustration.map((item) => {
+                        return (
+                            <li>
+                                <div>
+                                    <NavLink to={item.link} className={classes.download}>
+                                        <i className="fas fa-file-image"> </i>
+                                    </NavLink>
+                                </div>
+                                {item.text}
+                            </li>
+                        )
+                    })
+                }
+        </>
     },
     {
         name: 'Website',
@@ -48,11 +148,20 @@ let data = [
             return (
                 <li>
                     <div>
-                        <a href={item.link} target="_blank">
-                            <i className="fas fa-eye"> </i>
-                        </a>
+                        {
+                            item.link !== "" ?
+                                <a href={item.link} target="_blank">
+                                    <i className="fas fa-eye"> </i>
+                                </a>
+                                :
+                                <a style={{cursor: 'not-allowed'}} target="_blank">
+                                    <i className="fas fa-eye-slash"> </i>
+                                </a>
+                        }
+
                         <a href={item.git} target="_blank">
-                            <i className="fab fa-github"> </i>
+                            <i className="fas fa-code"> </i>
+                            {/*<i className="fab fa-github"> </i>*/}
                         </a>
                     </div>
                     {item.text}
@@ -62,11 +171,33 @@ let data = [
     },
     {
         name: 'Web design',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+        text: webdesign.map((item) => {
+            return (
+                <li>
+                    <div>
+                        <a href={item.link} download className={classes.download}>
+                            <i className="fas fa-file-download"> </i>
+                        </a>
+                    </div>
+                    {item.text}
+                </li>
+            )
+        })
     },
     {
         name: 'Illustration',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nihil, nisi, voluptate ad quis ea omnis quidem minima fugit adipisci, porro ut velit officiis natus eligendi autem inventore dolor fuga unde nesciunt expedita, beatae officia nostrum labore. Reiciendis, commodi adipisci eius est recusandae ipsa incidunt repellat explicabo nobis corporis debitis non ullam, eos itaque, quia, iste repudiandae. Iusto numquam consectetur quo, et, quis deleniti ipsam eaque perferendis. Repellat ad, molestiae id deserunt praesentium distinctio similique nesciunt itaque. Repellat error enim blanditiis esse, odio commodi exercitationem nostrum perferendis veniam quod, recusandae provident aspernatur aliquam placeat odit cumque fugit ducimus, voluptatibus ad?'
+        text: illustration.map((item) => {
+            return (
+                <li>
+                    <div>
+                        <NavLink to={item.link} className={classes.download}>
+                            <i className="fas fa-file-image"> </i>
+                        </NavLink>
+                    </div>
+                    {item.text}
+                </li>
+            )
+        })
     },
 ];
 

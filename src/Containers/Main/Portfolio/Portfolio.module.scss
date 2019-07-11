@@ -12,12 +12,28 @@
     color: #003763;
     margin-bottom: 15px;
   }
+  h4{
+    margin: 35px 0 25px;
+    border-top: 1px solid #f4841a;
+    padding-top: 20px;
+    width: 50%;
+    &:first-child {
+      border: none;
+      margin-top: 0;
+    }
+  }
   .lists{
+    margin-top: 15px;
+
     li{
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      width: 80%;
+      width: 50%;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #003763;
+      padding-bottom: 5px;
+
       div{
         margin-right: 25px;
       }
@@ -25,8 +41,19 @@
         color: #003763;
         margin-right: 5px;
         transition: .5s;
+
         &:hover{
           color: #f4841a;
+        }
+        i{
+          width: 25px;
+          text-align: center;
+
+        }
+        &.download{
+          i{
+            width: 60px;
+          }
         }
       }
     }

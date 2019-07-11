@@ -22,3 +22,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
  }
 
+
+p{
+    font-size: 18px;
+}

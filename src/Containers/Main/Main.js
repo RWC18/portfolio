@@ -11,6 +11,8 @@ import Error404 from "./Error404/Error404";
 import SideBar from "./SideBar/SideBar";
 
 import classes from './Main.module.scss';
+import Root from "../Root/Root";
+import IllustrationShow from "./Portfolio/IllustrationSHow/IllustrationShow";
 
 const Main = () => {
     return (
@@ -24,6 +26,7 @@ const Main = () => {
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/contact" component={Contact} />
                     <Route exact path="/resume" component={Resume} />
+                    <Route path="/images/illustrations/:name" component={IllustrationShow}/>
                     <Route component={Error404} />
                 </Switch>
             </div>

@@ -15,7 +15,7 @@
 }
 .tabs-header {
   display: table;
-  width: 40%;
+  width: 50%;
   list-style-type: none;
   border-bottom: 2px solid #f4841a55;
 }
@@ -71,11 +71,11 @@
 
 @keyframes change {
   0% {
-    transform: translateY(100%);
+    transform: translateX(100%);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
