@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './Contact.module.scss';
 
@@ -10,6 +10,21 @@ const Contact = () => {
         <p><i className="fas fa-mobile-alt"> </i> +374-94-223-323</p>,
         <p><i className="fas fa-envelope"> </i> <a href="mailto:vahe.minasyan.2000.at@gmail.com">vahe.minasyan.2000.at@gmail.com</a></p>,
     ];
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
+    const [comment, setComment] = useState('');
+
+
+
+    const sendFunc = (event) => {
+        event.preventDefault();
+
+
+
+        debugger;
+    };
 
     return (
         <div className={classes.Contact}>
@@ -30,15 +45,32 @@ const Contact = () => {
                             cnt.map((cnt) => cnt)
                         }
                     </div>
-                    <div className={classes.inputs}>
-                        <input type="text" placeholder="Name"/>
-                        <input type="email" placeholder="Email"/>
-                        <input type="text" placeholder="Phone"/>
-                        <textarea placeholder="Comment"></textarea>
+                    <form className={classes.inputs}>
+                        <input
+                            type="text"
+                            placeholder="Name" defaultValue={name}
+                            onChange={e => setName(e.target.value)}
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email" defaultValue={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Phone" defaultValue={number}
+                            onChange={e => setNumber(e.target.value)}
+                        />
+                        <textarea
+                            placeholder="Comment"
+                            defaultValue={comment}
+                            onChange={e => setComment(e.target.value)}
+                        ></textarea>
+
                         <div className={classes.send}>
-                            <button>SUBMIT</button>
+                            <button onClick={(event) => sendFunc(event)}>SUBMIT</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

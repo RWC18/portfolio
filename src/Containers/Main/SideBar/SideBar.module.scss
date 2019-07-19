@@ -12,12 +12,16 @@
 //}
 
 .sideBar{
-  width: 400px;
+  width: 20%;
   //height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
+
+  @media (max-width: 769px) {
+    display: none;
+  }
 }
 
 .area{

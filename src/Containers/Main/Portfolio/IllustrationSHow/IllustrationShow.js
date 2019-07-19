@@ -17,6 +17,7 @@ import classes from "./IllustrationShow.module.scss";
 const IllustrationShow = (props) => {
     let [currImg, SetImg] = useState(null);
 
+
     let images = [
         Graffitti_M,
         Graffiti_T,
@@ -30,6 +31,8 @@ const IllustrationShow = (props) => {
     ];
 
     useEffect(() => {
+        document.title = props.match.params.name + " | Vahe Minasyan";
+
         let img = images.map((item) => {
             if (item.includes(props.match.params.name)) {
                 return <img src={item}/>

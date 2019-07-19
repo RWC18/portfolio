@@ -16,9 +16,10 @@
     margin: 35px 0 25px;
     border-top: 1px solid #f4841a;
     padding-top: 20px;
-    width: 50%;
+    min-width: 50%;
     &:first-child {
       border: none;
+      padding-top: 0;
       margin-top: 0;
     }
   }
@@ -29,11 +30,14 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      width: 50%;
+      //word-break: break-all;
+      min-width: 50%;
       margin-bottom: 15px;
       border-bottom: 1px solid #003763;
       padding-bottom: 5px;
-
+      //@media (max-width: 1400px) {
+      //  font-size: 16px;
+      //}
       div{
         margin-right: 25px;
       }
