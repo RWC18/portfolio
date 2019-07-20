@@ -15,6 +15,7 @@ const Contact = () => {
     const [email, setEmail] = useState({value: '', error: false});
     const [number, setNumber] = useState({value: '', error: false});
     const [comment, setComment] = useState({value: '', error: false});
+    const [sent, setSent] = useState(false);
 
 
 
@@ -42,7 +43,8 @@ const Contact = () => {
             setComment({...comment,error: false});
         }
 
-                
+        setSent((comment.error && name.error && email.error && number.error) ? false : true);
+
     };
 
     return (
@@ -104,6 +106,7 @@ const Contact = () => {
                         <div className={classes.send}>
                             <button onClick={(event) => sendFunc(event)}>SUBMIT</button>
                         </div>
+                        {sent ? <p className={classes.success}>Your message successfully sent</p> : null}
                     </form>
                 </div>
             </div>
