@@ -11,19 +11,38 @@ const Contact = () => {
         <p><i className="fas fa-envelope"> </i> <a href="mailto:vahe.minasyan.2000.at@gmail.com">vahe.minasyan.2000.at@gmail.com</a></p>,
     ];
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [number, setNumber] = useState('');
-    const [comment, setComment] = useState('');
+    const [name, setName] = useState({value: '', error: false});
+    const [email, setEmail] = useState({value: '', error: false});
+    const [number, setNumber] = useState({value: '', error: false});
+    const [comment, setComment] = useState({value: '', error: false});
 
 
 
     const sendFunc = (event) => {
         event.preventDefault();
+        if (name.value === "") {
+            setName({...name, error: true});
+        } else  {
+            setName({...name, error: false});
+        }
+        if (email.value === "") {
+            setEmail({...email, error: true});
+        } else  {
+            setEmail({...email, error: false});
+        }
+        if (number.value === "") {
+            setNumber({...number, error: true});
+        }else  {
+            setNumber({...number, error: false});
+        }
+        if (comment.value === "") {
+            setComment({...comment,error: true});
+        }
+        else  {
+            setComment({...comment,error: false});
+        }
 
-
-
-        debugger;
+                
     };
 
     return (
@@ -46,26 +65,41 @@ const Contact = () => {
                         }
                     </div>
                     <form className={classes.inputs}>
-                        <input
-                            type="text"
-                            placeholder="Name" defaultValue={name}
-                            onChange={e => setName(e.target.value)}
-                        />
-                        <input
-                            type="email"
-                            placeholder="Email" defaultValue={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            placeholder="Phone" defaultValue={number}
-                            onChange={e => setNumber(e.target.value)}
-                        />
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Name" defaultValue={name.value}
+                                onChange={e => setName({value: e.target.value, error: false})}
+                            />
+                            { name.error ? <p>Write your name !!</p> : null}
+                        </div>
+
+                        <div>
+                            <input
+                                type="email"
+                                placeholder="Email" defaultValue={email.value}
+                                onChange={e => setEmail({value:e.target.value, error: false})}
+                            />
+                            { email.error ? <p>Write your email !!</p> : null}
+
+                        </div>
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Phone" defaultValue={number.value}
+                                onChange={e => setNumber({value:e.target.value, error: false})}
+                            />
+                            { number.error ? <p>"Write your number !!</p> : null}
+
+                        </div>
+
                         <textarea
                             placeholder="Comment"
-                            defaultValue={comment}
-                            onChange={e => setComment(e.target.value)}
+                            // defaultValue={comment.value}
+                            onChange={e => setComment({value:e.target.value, error: false})}
                         ></textarea>
+                        { comment.error ? <p>Write your comment !!</p> : null}
+
 
                         <div className={classes.send}>
                             <button onClick={(event) => sendFunc(event)}>SUBMIT</button>

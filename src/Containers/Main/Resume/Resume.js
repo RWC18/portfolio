@@ -8,7 +8,8 @@ const Resume = () => {
 
     return (
         <div className={classes.Resume}>
-            Resume
+            Page under construct.
+            <p>Coming soon !!</p>
         </div>
     )
 }

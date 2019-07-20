@@ -36,6 +36,10 @@ let webdesign = [
         text: "Design for card website",
         link: "../../../OtherFiles/onepage.xd",
     },
+    {
+        text: "Design for hotel",
+        link: "../../../OtherFiles/hotel.xd",
+    },
 ];
 
 
